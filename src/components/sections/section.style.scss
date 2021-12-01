@@ -1,0 +1,24 @@
+@use '../../main-style.scss' as main;
+
+
+section {
+    padding: main.$section-padding;
+
+    .container {
+        text-align: center;
+
+        h2 {
+            margin-bottom: 60px;
+        }
+        .books {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+    }
+}
+
+.HomePage section:nth-child(even){
+    background-color: main.$secondary-section-bkg-color;
+}

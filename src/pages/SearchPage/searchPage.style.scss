@@ -1,0 +1,33 @@
+@import '../../main-style.scss'; // not the best practice
+
+.serach {
+    .search-bar {
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+        .back-btn {
+            width: 50px;
+            height: 50px;
+            background: {
+                color: #f6f6f6;
+                image: url('../../icons/arrow-back.svg');
+                repeat: no-repeat;
+                position: center;
+                size: 30px;
+            } 
+        }
+
+        input {
+            width:100%;
+            padding: 15px 10px;
+            border: none;
+            font-size: 1.25em;
+
+            &:active, &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    
+}
