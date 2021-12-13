@@ -3,9 +3,6 @@
 MyReads: A Book Tracking App project | Simple React app
 first project at Advanced Front-End Web Development Nanodegree Program
 
-## Screenshots
-![image]('./screenshots/home.png')
-![image]('./screenshots/search.png')
 ## Features
 
 1. Easy to Install
