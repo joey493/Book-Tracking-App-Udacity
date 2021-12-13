@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import HomePage from './pages/HomePage/Home.page';
@@ -24,8 +24,7 @@ const App = () => {
   
   // Update books shelf
   const updateBookShelf = async (book, shelf) => {
-      if (book.shelf === shelf ) return;
-      
+    if (book.shelf === shelf ) return;
       try {
         await BooksApi.update(book, shelf);
       } catch (error) {
@@ -36,7 +35,7 @@ const App = () => {
   
     useEffect(() => {
       getBooks()
-    })
+    },[])
 
   return (
     <>
@@ -45,9 +44,10 @@ const App = () => {
               <h1><span className="h-font-style">My</span>Reads</h1>
           </div>
       </header>
-
-      <Route exact path='/' render={() => <HomePage allBooks={allBooks} onChangeBookShelf={updateBookShelf}/>}/>
-      <Route path='/search' render={() => <SearchPage allBooks={allBooks} onChangeBookShelf={updateBookShelf}/>}/>
+      <Routes>
+        <Route exact path='/' element={<HomePage allBooks={allBooks} onChangeBookShelf={updateBookShelf}/>} />
+        <Route path='/search' element={<SearchPage allBooks={allBooks} onChangeBookShelf={updateBookShelf}/>}/>
+      </Routes>
     </>
   )
 }

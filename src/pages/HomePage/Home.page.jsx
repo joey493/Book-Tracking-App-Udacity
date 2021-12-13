@@ -7,7 +7,7 @@ import './HomePage.style.scss';
 const HomePage = ({ allBooks, onChangeBookShelf }) => {
     const shelvesHandler = (books) => {
         // function output
-        const shelvesArr = [];
+        let shelvesArr = [];
         // shelves arr
         const shelves = [
             {
@@ -25,21 +25,23 @@ const HomePage = ({ allBooks, onChangeBookShelf }) => {
         ]
         shelves.forEach(({ shelf, title }, index) => {
             // filter books according to it's shelf
-            const filteredArr = books.filter(book => book.shelf === shelf);
+            const filteredArr = books && books.filter(book => book.shelf === shelf);
 
             // push shelves in output array
-            shelvesArr.push({
-                id: index,
-                title: title,
-                books: filteredArr,
-            });
+            shelvesArr = [
+                ...shelvesArr,
+                {
+                    id: index,
+                    title: title,
+                    books: filteredArr,
+                }
+            ]
         })
         return shelvesArr;
     }
 
     const shelfBooks = shelvesHandler(allBooks);
-
-    return (
+    return ( 
         <div className='HomePage'>
             {shelfBooks.map(shelf => (
                 <Section shelfBooks={shelf.books} title={shelf.title}
