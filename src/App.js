@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import HomePage from './pages/HomePage/Home.page';
@@ -42,6 +42,7 @@ const App = () => {
       <header>
           <div className="container">
               <h1><span className="h-font-style">My</span>Reads</h1>
+              <Link className='link' to='/'>Home</Link>
           </div>
       </header>
       <Routes>
