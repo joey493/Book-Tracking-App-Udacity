@@ -3,6 +3,10 @@
 MyReads: A Book Tracking App project | Simple React app
 first project at Advanced Front-End Web Development Nanodegree Program
 
+## Project demo
+
+- https://joey493.github.io/Book-Tracking-App-Udacity/
+
 ## Features
 
 1. Easy to Install
